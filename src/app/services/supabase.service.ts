@@ -14,9 +14,9 @@ export class SupabaseService {
 
   private initializeSupabase() {
     this.supabaseClient = createClient("https://gqkuommdmfzmwkzdewma.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdxa3VvbW1kbWZ6bXdremRld21hIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDkyNjQyNTIsImV4cCI6MTk2NDg0MDI1Mn0.iF651HDhqynAQRlG8T6wFS3ZEx4dqxHiEiguc0m7-zI", {
+      process.env['SUPABASE_KEY'], {
         headers: {
-          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZWNyZXQiOiJmZjE3ZDE0NmQ4ZTU1OTZjNzMyNzQ1YTEiLCJpYXQiOjE2NTA3NzQ3NjZ9.sdlJx8VSW5zEXGSZeF0KZAUTnua1btj2wwnxDv_kRs8"
+          Authorization: `Bearer ${process.env['AUTH_TOKEN']}`
         }
       });
   }
