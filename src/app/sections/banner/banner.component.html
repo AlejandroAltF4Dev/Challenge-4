@@ -1,0 +1,16 @@
+<div class="flex">
+  <ngx-flicking
+    [options]="options"
+    [plugins]="plugins"
+    class="pb-12"
+  >
+    <a [href]="item.link" target="_blank" flicking-panel
+         *ngFor="let item of items; let index = index"
+         class="block card-panel self-center rounded-3xl shadow-[0px_13px_50px_6px_rgba(0,0,0,0.28)] hover:shadow-[#214B6B50] flicking-panel overflow-hidden">
+      <img [src]="item.image"
+           class="w-[340px] lg:w-[822px] h-[158px] lg:h-[384px]"/>
+    </a>
+    <div in-viewport class="flicking-pagination"></div>
+
+  </ngx-flicking>
+</div>
