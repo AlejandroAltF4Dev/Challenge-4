@@ -55,7 +55,7 @@ export class TrendingComponent implements OnInit {
     if (!append){
       filters.page = 0;
     }
-    const {data} = await this.supabaseService.getSteam(filters)
+    const {data, statusText} = await this.supabaseService.getSteam(filters)
     this.games = append ? [...this.games, ...data] : data;
     this.loading = false;
   }
